@@ -6,12 +6,11 @@ typedef struct
 	int date[MAXSIZE];
 	int last;
 } list;
-list L, *ptrl;
 list *MakeEmpty(void)
 {
 	list *ptrl;
 	ptrl = (list *)malloc(sizeof(list));
-	ptrl->last = -1;
+	ptrl->last = 0;
 	return ptrl;
 }
 void insert(int x, int i, list *ptrl)
@@ -71,11 +70,12 @@ typedef struct node
 	int x;
 	struct node *next;
 } link;
-link LK1, *head;
 link *lkMakeEmpty(void)
 {
 	link *head = (link *)malloc(sizeof(link));
+	head->next=NULL; //head的next在没有定义时不指向NULL
 	return head;
+	
 }
 int lkLength(link *head)
 {
@@ -111,58 +111,58 @@ link *lkFind(int k, link *head)
 	}
 	return p;
 }
-link *insert(int k, int i, link *head)
+link *lkinsert(int k, int i, link *head)
 {
 	link *p, *s;
 	if (i == 1)
 	{
-		s=(link*)malloc(sizeof(link));
-		s->x=k;
-		s->next=head;
+		s = (link *)malloc(sizeof(link));
+		s->x = k;
+		s->next = head;
 		return s;
 	}
-	p=lkFindKth(i-1,head);
-	if(p==NULL)
+	p = lkFindKth(i - 1, head);
+	if (p == NULL)
 	{
 		printf("参数i出错");
 		return NULL;
 	}
 	else
 	{
-		s=(link*)malloc(sizeof(link));
-		s->x=k;
-		s->next=p->next;
-		p->next=s;
+		s = (link *)malloc(sizeof(link));
+		s->x = k;
+		s->next = p->next;
+		p->next = s;
 		return head;
 	}
 }
-link *delect(int  i,link*head)
+link *lkdelect(int i, link *head)
 {
-	link *p,*s;
-	if(i==1)
+	link *p, *s;
+	if (i == 1)
 	{
-		s=head;
-		if(head!=NULL)
-		head=head->next;
+		s = head;
+		if (head != NULL)
+			head = head->next;
 		else
-		return NULL;
+			return NULL;
 		free(s);
 		return head;
 	}
-	p=lkFindKth(i-1,head);
-	if(p==NULL)
+	p = lkFindKth(i - 1, head);
+	if (p == NULL)
 	{
-		printf("第%d个结点不存在",i-1);
+		printf("第%d个结点不存在", i - 1);
 		return NULL;
 	}
-	else if(p->next==NULL)
+	else if (p->next == NULL)
 	{
-		printf("第%d个结点不存在",i);
+		printf("第%d个结点不存在", i);
 	}
 	else
 	{
-		s=p->next;
-		p->next=s->next;
+		s = p->next;
+		p->next = s->next;
 		free(s);
 		return head;
 	}
@@ -171,6 +171,71 @@ link *delect(int  i,link*head)
 
 int main(int argc, char *argv[])
 {
-
+	list lt, *lthead;
+	lthead = MakeEmpty();
+	link * lkhead = lkMakeEmpty();
+	int n = 0, x = 0, j = 0; //j用来标记数组长度
+	FILE *in, *out;
+	in = fopen("input.txt", "r");
+	out = fopen("output.txt", "w");
+	int flag1=0;
+	int flag2=0;
+	while (1)
+	{
+		flag2=0;
+		flag1++;
+		scanf("%d", &n);
+		flag2+=n;
+		if (n == -1)
+			break;
+		else
+		{
+			lthead = MakeEmpty();
+			j = n;
+			for (int i = 1; i <= n; i++)
+			{
+				fscanf(in, "%d", &x);
+				insert(x, i, lthead);
+			}
+		}
+		scanf("%d", &n);
+		flag2+=n;
+		lkhead = lkMakeEmpty();
+		for (int i = 1; i <= n; i++)
+		{
+			fscanf(in, "%d", &x);
+			lkhead =lkinsert(x, i, lkhead);
+		}
+		int i = 1;
+		link *p = lkhead;
+		fprintf(out,"Case %d:%d\n",flag1,flag2);
+		while (i <= j || p->next != NULL)
+		{
+			if (i <= j && p->next != NULL)
+			{
+				if (lthead->date[i] < p->x)
+				{
+					fprintf(out, "%d ", lthead->date[i]);
+					i++;
+				}
+				else
+				{
+					fprintf(out, "%d ", p->x);
+					p = p->next;
+				}
+			}
+			else if (i <= j)
+			{
+				fprintf(out, "%d ", lthead->date[i]);
+				i++;
+			}
+			else
+			{
+				fprintf(out, "%d ", p->x);
+				p = p->next;
+			}
+		}
+		fprintf(out,"\n");
+	}
 	return 0;
 }
