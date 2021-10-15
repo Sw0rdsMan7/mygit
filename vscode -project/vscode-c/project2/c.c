@@ -178,8 +178,8 @@ int main(int argc, char *argv[])
 	FILE *in, *out;
 	in = fopen("input.txt", "r");
 	out = fopen("output.txt", "w");
-	int flag1=0;
-	int flag2=0;
+	int flag1=0;//确定case数
+	int flag2=0;//确定case所包含的数据数量
 	while (1)
 	{
 		flag2=0;
@@ -209,7 +209,7 @@ int main(int argc, char *argv[])
 		int i = 1;
 		link *p = lkhead;
 		fprintf(out,"Case %d:%d\n",flag1,flag2);
-		while (i <= j || p->next != NULL)
+		while (i <= j || p->next != NULL)//输出链表和顺序表的内容
 		{
 			if (i <= j && p->next != NULL)
 			{
