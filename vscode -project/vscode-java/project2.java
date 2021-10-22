@@ -1,4 +1,3 @@
-
 /*public class project2 {  //3.4
 
     public static void main(String[] args) {
@@ -583,31 +582,486 @@ public class project2 {
 /*import java.util.Scanner;//5.17
 public class project2 {
     public static void main(String[] args) {
-        Scanner input =new Scanner(System.in);
-       int a=input.nextInt();
-       for(int i=1;i<=a;i++)
-       {
-            for(int j=1;j<=7;j++)
-            {
-                if(7-j<i)
-                System.out.printf("%-2d",7-j+1);
+        Scanner input = new Scanner(System.in);
+        int a = input.nextInt();
+        for (int i = 1; i <= a; i++) {
+            for (int j = 1; j <= a; j++) {
+                if (a - j < i)
+                    System.out.printf("%-2d", a - j + 1);
                 else
-                System.out.print("  ");
+                    System.out.print("  ");
             }
-            for(int j=2;j<=7;j++)
-            {
-                if(i>=j&&j!=2)
-                {
-                    System.out.printf("%2d",j);
-                }
-                else if(j==2&&i>=j)
-                {
+            for (int j = 2; j <= a; j++) {
+                if (i >= j && j != 2) {
+                    System.out.printf("%2d", j);
+                } else if (j == 2 && i >= j) {
                     System.out.print(j);
                 }
-                
+
             }
             System.out.println("");
-       }
+        }
+        input.close();
+    }
+}*/
+/*import java.util.Scanner;//5.19
+
+public class project2 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int a = input.nextInt();
+        for (int i = 1; i <= a; i++) {
+            for (int j = 1; j <= a; j++) {
+                if (a - j < i)
+                    System.out.printf("%-4d", (int)(Math.pow(2, i-a+j-1)));
+                else
+                    System.out.print("    ");
+            }
+            for (int j = 2; j <= a; j++) {
+                if (i >= j && j != 2) {
+                    System.out.printf("%-4d", (int)(Math.pow(2, i-j)));
+                } else if (j == 2 && i >= j) {
+                    System.out.printf("%-4d", (int)(Math.pow(2, i-j)));
+                }
+
+            }
+            System.out.println("");
+        }
+        input.close();
+    }
+}*/
+/*import java.util.Scanner;//5.21
+public class project2 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Loan Amount: ");
+        double Loan_amount = input.nextDouble();
+        System.out.print("Number of Years: "); 
+        int num_year=input.nextInt();
+        double mouthlyInterestRate=0.0;
+        for(double i=5.0;i<=8.0;i+=0.125)
+        {
+            mouthlyInterestRate=i/1200;
+            double mouthlyPayment=Loan_amount*mouthlyInterestRate/(1-1/Math.pow(1+mouthlyInterestRate, num_year*12));
+            double totalPayment =mouthlyPayment*12*num_year;
+            System.out.printf("%.2f %.2f\n",mouthlyPayment,totalPayment);
+        }
+
+
+        input.close();
+        }
+        
+    }*/
+/*import java.util.Scanner;//5.22
+
+public class project2 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Loan Amount: ");
+        double Loan_amount = input.nextDouble();
+        System.out.print("Number of Years: ");
+        int num_year = input.nextInt();
+        System.out.print("Annual Interest Rate:");
+        double Annualinterest = input.nextDouble();
+        double mouthlyInterestRate = Annualinterest / 1200;
+        double mouthlyPayment = Loan_amount * mouthlyInterestRate
+                / (1 - 1 / Math.pow(1 + mouthlyInterestRate, num_year * 12));
+        double totalPayment = mouthlyPayment * 12 * num_year;
+        System.out.printf("Mouthly Payment:%.2f Total Payment::%.2f\n", mouthlyPayment, totalPayment);
+        double balance = Loan_amount;
+        double Interest = 0;
+        double principal = 0;
+        for (double i = 1; i <= 12 * num_year; i++) {
+            Interest = mouthlyInterestRate * balance;
+            principal = mouthlyPayment - Interest;
+            balance = balance - principal;
+            System.out.println(i + "\t\t" + Interest + "\t\t" + principal + "\t\t" + balance);
+
+        }
+
+        input.close();
+    }
+
+}*/
+/*import java.util.Scanner;//5.25
+
+public class project2 {
+    public static void main(String[] args) {
+        double sum=0;
+        for(int j=1;j<=10;j++){
+            sum=0;
+            for(int i=1;i<=10000;i++){
+                sum+=Math.pow(-1, i+1)/(2*i-1);
+            }
+            sum*=4;
+            System.out.println(sum);
+            
+        }
+        
+
+        
+    }
+
+}*/
+/*public class project2 {//5.26
+    public static void main(String[] args) {
+        double sum=0;
+        double flag=1;
+        for(int j=1;j<=10;j++){
+            sum=0;
+            for(int i=0;i<=10000*j;i++){
+                flag=1;
+                for(int x=1;x<=i;x++){
+                    flag*=x;
+                }
+                sum+=(double)(1/flag);   
+            }
+            System.out.println(sum);
+            
+        }
+        
+
+        
+    }
+
+}*/
+/*public class project2 {// 5.27
+    public static void main(String[] args) {
+        int flag1=0;
+        int flag2=0;
+        for(int i=201;i<=2020;i++){
+            if(i%4==0 && i%100!=0){
+                System.out.printf("%d ",i);
+                flag1++;
+                flag2++;
+                if(flag1==10){
+                    System.out.println();
+                    flag1=0;
+                }
+            }
+            else if(i%100==0 && i%400 ==0){
+                System.out.printf("%d ",i);
+                flag1++;
+                flag2++;
+                if(flag1==10){
+                    System.out.println();
+                    flag1=0;
+                }
+            }
+            
+            }
+            System.out.print("\n");
+            System.out.print(flag2);
+            
+        
+
+        
+    }
+
+}*/
+/*import java.util.Scanner;//5.28
+
+public class project2 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter year: ");
+        int year = input.nextInt();
+        System.out.print("Enter first day is : ");
+        int week = input.nextInt();
+        int flag = 0;
+        String day = "";
+        String mouth = "January";
+        if (year % 4 == 0 && year % 100 != 0)
+            flag = 1;
+        else if (year % 100 == 0 && year % 400 == 0)
+            flag = 1;
+        for (int i = 1; i <= 12; i++) {
+            if (week == 1) {
+                day = "Monday";
+            } else if (week == 2) {
+                day = "Tuesday";
+            } else if (week == 3) {
+                day = "Wednesday";
+            } else if (week == 4) {
+                day = "Thursday";
+            } else if (week == 5) {
+                day = "Friday";
+            } else if (week == 6) {
+                day = "Saturday";
+            } else {
+                day = "Sunday";
+            }
+            System.out.printf("%s 1 %d, is %s\n", mouth, year, day);
+            if (i == 1) {
+                week = (week + 31) % 7;
+                mouth = "February";
+            } else if (i == 2) {
+                if (flag == 1)
+                    week = (week + 29) % 7;
+                else
+                    week = (week + 28) % 7;
+                mouth = "March";
+            } else if (i == 3) {
+                week = (week + 31) % 7;
+                mouth = "April";
+            } else if (i == 4) {
+                week = (week + 30) % 7;
+                mouth = "May";
+            } else if (i == 5) {
+                week = (week + 31) % 7;
+                mouth = "June";
+            } else if (i == 6) {
+                week = (week + 30) % 7;
+                mouth = "July";
+            } else if (i == 7) {
+                week = (week + 31) % 7;
+                mouth = "August";
+            } else if (i == 8) {
+                week = (week + 31) % 7;
+                mouth = "September";
+            } else if (i == 9) {
+                week = (week + 30) % 7;
+                mouth = "October";
+            } else if (i == 10) {
+                week = (week + 31) % 7;
+                mouth = "November";
+            } else if (i == 11) {
+                week = (week + 30) % 7;
+                mouth = "December";
+            }
+        }
+        input.close();
+    }
+}*/
+/*import java.util.Scanner;//5.29
+public class project2{
+    public static void main(String[] args){
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter year: ");
+        int year = input.nextInt();
+        System.out.print("Enter first day is : ");
+        int week = input.nextInt();
+        int flag = 0;
+        String day = "";
+        String mouth = "January";
+        int mouth_day=31;
+        if (year % 4 == 0 && year % 100 != 0)
+            flag = 1;
+        else if (year % 100 == 0 && year % 400 == 0)
+            flag = 1;
+        for (int i = 1; i <= 12; i++) {
+            if (week == 1) {
+                day = "Monday";
+            } else if (week == 2) {
+                day = "Tuesday";
+            } else if (week == 3) {
+                day = "Wednesday";
+            } else if (week == 4) {
+                day = "Thursday";
+            } else if (week == 5) {
+                day = "Friday";
+            } else if (week == 6) {
+                day = "Saturday";
+            } else {
+                day = "Sunday";
+            }
+            System.out.printf("         %s  %d\nSun  Mon  Tue  Wed  Thu  Fri  Sat  \n", mouth, year);
+            if (i == 1) {
+                week = (week + 31) % 7;
+                mouth = "February";
+                mouth_day=31;
+            } else if (i == 2) {
+                if (flag == 1){
+                    week = (week + 29) % 7;
+                    mouth_day=29;
+                }else{
+                    week = (week + 28) % 7;
+                    mouth_day=28;
+                }mouth = "March";
+            } else if (i == 3) {
+                week = (week + 31) % 7;
+                mouth = "April";
+                mouth_day=31;
+            } else if (i == 4) {
+                week = (week + 30) % 7;
+                mouth = "May";
+                mouth_day=30;
+            } else if (i == 5) {
+                week = (week + 31) % 7;
+                mouth = "June";
+                mouth_day=31;
+            } else if (i == 6) {
+                week = (week + 30) % 7;
+                mouth = "July";
+                mouth_day=30;
+            } else if (i == 7) {
+                week = (week + 31) % 7;
+                mouth = "August";
+                mouth_day=31;
+            } else if (i == 8) {
+                week = (week + 31) % 7;
+                mouth = "September";
+                mouth_day=31;
+            } else if (i == 9) {
+                week = (week + 30) % 7;
+                mouth = "October";
+                mouth_day=30;
+            } else if (i == 10) {
+                week = (week + 31) % 7;
+                mouth = "November";
+                mouth_day=31;
+            } else if (i == 11) {
+                week = (week + 30) % 7;
+                mouth = "December";
+                mouth_day=30;
+            }else{
+                mouth_day=31;
+            }
+            for(int x=1;x<=week%7;x++){
+                System.out.print("     ");
+            }
+            for(int j=1;j<=mouth_day;j++){
+                
+                System.out.printf("%-5d",j);
+                week=(week+1)%7;
+                if(week==0)
+                    System.out.print("\n");
+
+
+            }
+
+            System.out.print("\n");
+        }
+       
+    }
+}*/
+/*import java.util.Scanner;//5.32
+public class project2{
+    public static void main(String[] args){
+        int a=(int)(Math.random()*10);
+        while(a==0){
+            a=(int)(Math.random()*10);
+        }
+        int b=(int)(Math.random()*10);
+        while(a==b){
+            b=(int)(Math.random()*10);
+        }    
+        System.out.printf("%d %d",a,b);
+    }
+}*/
+/*import java.util.Scanner;//5.33
+public class project2 {
+    public static void main(String[] args) {
+        int[] a = new int[10000];
+        Scanner input = new Scanner(System.in);
+        int flag = 0;
+        int sum = 0;
+        for (int y = 1; y <= 10000; y++) {
+            sum=0;
+            flag=0;
+            for (int i = 1; i < y; i++) {
+                if (y % i == 0) {
+                    a[flag] = i;
+                    flag++;
+                }
+            }
+            for (int i = 0; i < flag; i++) {
+                sum += a[i];
+            }
+            if (sum == y)
+                System.out.println(y);
+        }
+
+        input.close();
+    }
+}*/
+/*import java.util.Scanner;//5.36
+public class project2 {
+    public static void main(String[] args) {
+
+        System.out.print("Enter the first digits of an ISBN as integer ");
+        Scanner input = new Scanner(System.in);
+        long a = input.nextLong();
+        System.out.print("The ISBN-10 number is ");
+        long b = 100000000;
+        long c = 0;
+        int flag = 1;
+        while (a < b) {
+            System.out.print("0");
+            b /= 10;
+        }
+        System.out.print(a);
+        b = 100000000;
+        while (a != 0) {
+            c += (a / b) * flag;
+            a = a % b;
+            b /= 10;
+            flag++;
+        }
+        c = c % 11;
+        if (c == 10)
+            System.out.print("X");
+        else
+            System.out.print(c);
+        input.close();
+
+    }
+}*/
+/*import java.util.Scanner;//5.37
+public class project2 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int x = input.nextInt();
+        int []a=new int[100];
+        int flag=0;
+        while(x!=0){
+            a[flag]=x%2;
+            flag++;
+            x/=2;
+        }
+        for(int i=flag-1;i>=0;i--){
+            System.out.print(a[i]);
+        }
+        input.close();
+    }
+}*/
+/*import java.util.Scanner;//5.38
+public class project2 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int x = input.nextInt();
+        int []a=new int[100];
+        int flag=0;
+        while(x!=0){
+            a[flag]=x%8;
+            flag++;
+            x/=8;
+        }
+        for(int i=flag-1;i>=0;i--){
+            System.out.print(a[i]);
+        }
+        input.close();
+    }
+}*/
+/*import java.util.Scanner;//5.45
+public class project2 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        double []a=new double[10];
+        double sum1=0;
+        double sum2=0;
+        for(int i=0;i<=9;i++){
+            System.out.print("Enter a number: ");
+            a[i]=input.nextDouble();
+            sum1+=a[i];
+            sum2+=Math.pow(a[i], 2);
+        }
+        System.out.printf("The mean is %.2f\nThe Standard deviation is %.2f",sum1/10,Math.pow((sum2-Math.pow(sum1, 2)/10)/9, 0.5));
+
+
+
+
+
         input.close();
     }
 }*/

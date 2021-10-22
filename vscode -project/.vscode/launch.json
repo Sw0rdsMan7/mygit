@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch project2",
+            "request": "launch",
+            "mainClass": "project2",
+            "projectName": "vscode -project_50309c7e"
+        },
+        {
+            "type": "java",
             "name": "Launch Java Program",
             "request": "launch",
             "mainClass": ""
