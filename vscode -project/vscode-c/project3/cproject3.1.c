@@ -3,7 +3,7 @@
 #define MAXSIZE 10000
 typedef struct
 {
-	int date[MAXSIZE];
+	int data[MAXSIZE];
 	int top;
 } ltStack;
 ltStack *ltMakeEmpty()
@@ -30,7 +30,7 @@ void ltPush(ltStack *ptrl, int item)
 	}
 	else
 	{
-		ptrl->date[++(ptrl->top)] = item;
+		ptrl->data[++(ptrl->top)] = item;
 	}
 }
 int ltPop(ltStack *ptrl)
@@ -42,7 +42,7 @@ int ltPop(ltStack *ptrl)
 	}
 	else
 	{
-		return ptrl->date[(ptrl->top)--];
+		return ptrl->data[(ptrl->top)--];
 	}
 }
 
