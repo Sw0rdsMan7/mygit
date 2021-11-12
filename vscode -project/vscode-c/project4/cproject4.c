@@ -39,7 +39,7 @@ BiTree* ltPop(ltStack* ptrl) {
     }
 }
 
-void CreateBiTree(BiTree *T) {
+void CreateBiTree(BiTree* T) {
     char ch;
     scanf("%c", &ch);
     if (ch == '#')
@@ -148,29 +148,29 @@ int LeafCount(BiTree* T) {
     else
         return LeafCount(T->lchild) + LeafCount(T->rchild);
 }
-int Depth(BiTree *T){
-    if(T==NULL)
-    return 0;
-    else{
-        int m=0;
-        int n=0;
-        m=Depth(T->lchild);
-        n=Depth(T->rchild);
-        return m>n?m+1:n+1;
+int Depth(BiTree* T) {
+    if (T == NULL)
+        return 0;
+    else {
+        int m = 0;
+        int n = 0;
+        m = Depth(T->lchild);
+        n = Depth(T->rchild);
+        return m > n ? m + 1 : n + 1;
     }
 }
 int main() {
-    Queue *ptrl=createQuene();
-    ltStack *S=ltMakeEmpty();
-    BiTree *ptr=NULL;
+    Queue* ptrl = createQuene();
+    ltStack* S = ltMakeEmpty();
+    BiTree* ptr = NULL;
     CreateBiTree(ptr);
-    printf("%d\n",LeafCount(ptr));
-    printf("%d\n",Depth(ptr));
+    printf("%d\n", LeafCount(ptr));
+    printf("%d\n", Depth(ptr));
     PreOrderTraverse(ptr);
     InOrderTraverse(ptr);
     InOrderTraverse_2(ptr);
     PostOrderTraverse(ptr);
-    levelOrderTraverse(ptrl,ptr);
-    
+    levelOrderTraverse(ptrl, ptr);
+
     return 0;
 }

@@ -45,7 +45,6 @@ int ltPop(ltStack *ptrl)
 		return ptrl->data[(ptrl->top)--];
 	}
 }
-
 int main(int argc, char *argv[])
 {
 	ltStack *ltptrl;
