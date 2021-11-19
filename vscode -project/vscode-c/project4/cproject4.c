@@ -24,31 +24,38 @@ int ltFull(ltStack* ptrl) {
 }
 void ltPush(ltStack* ptrl, BiTree* item) {
     if (ltFull(ptrl)) {
-        printf("堆栈满");
+        printf("Stack is full");
         return;
     } else {
         ptrl->data[++(ptrl->top)] = item;
     }
 }
 BiTree* ltPop(ltStack* ptrl) {
-    if (ptrl->top == -1) {
-        printf("堆栈空");
+    int flag=0;
+    if (ptrl->top == -1&&flag!=1) {
+        printf("Stack is empty");
         return NULL;
     } else {
+        flag=1;
         return ptrl->data[(ptrl->top)--];
     }
 }
-
-void CreateBiTree(BiTree* T) {
+BiTree * CreateBiTree(BiTree *T) {
+    BiTree * ptr;
     char ch;
-    scanf("%c", &ch);
+    scanf("%c",&ch);
+    getchar();
     if (ch == '#')
-        T = NULL;
+        {
+            ptr=NULL;
+            return ptr;
+        }
     else {
-        T = (BiTree*)malloc(sizeof(BiTree));
-        T->data = ch;
-        CreateBiTree(T->lchild);
-        CreateBiTree(T->rchild);
+        ptr = (BiTree*)malloc(sizeof(BiTree));
+        ptr->data = ch;
+        ptr->lchild=CreateBiTree(ptr->lchild);
+        ptr->rchild=CreateBiTree(ptr->rchild);
+        return ptr;
     }
 }
 void PreOrderTraverse(BiTree* T) {
@@ -59,7 +66,6 @@ void PreOrderTraverse(BiTree* T) {
         PreOrderTraverse(T->lchild);
         PreOrderTraverse(T->rchild);
     }
-    printf("\n");
 }
 void InOrderTraverse(BiTree* T) {
     if (T == NULL)
@@ -69,7 +75,6 @@ void InOrderTraverse(BiTree* T) {
         printf("%c", T->data);
         InOrderTraverse(T->rchild);
     }
-    printf("\n");
 }
 void PostOrderTraverse(BiTree* T) {
     if (T == NULL)
@@ -79,7 +84,6 @@ void PostOrderTraverse(BiTree* T) {
         PostOrderTraverse(T->rchild);
         printf("%c", T->data);
     }
-    printf("\n");
 }
 void InOrderTraverse_2(BiTree* T) {  //非递归实现中序遍历二叉树
     ltStack* S = ltMakeEmpty();
@@ -89,10 +93,9 @@ void InOrderTraverse_2(BiTree* T) {  //非递归实现中序遍历二叉树
         T = ltPop(S);
         if (!T)
             break;
-        printf("%5d", T->data);
+        printf("%c", T->data);
         T = T->rchild;
     }
-    printf("\n");
 }
 typedef struct {
     BiTree* data[MAXSIZE];
@@ -116,7 +119,7 @@ void addq(Queue* ptrl, BiTree* T) {  //将树结点指针传入队列
 }
 BiTree* deleteq(Queue* ptrl) {
     if (ptrl->front == ptrl->rear) {
-        printf("队列空");
+        printf("Quene is empty");
         return NULL;
     } else {
         ptrl->front = (ptrl->front + 1) % MAXSIZE;
@@ -130,7 +133,7 @@ void levelOrderTraverse(Queue* ptrl, BiTree* T) {
     for (;;) {
         T = deleteq(ptrl);
         if (T) {
-            printf("%d", T->data);
+            printf("%c", T->data);
             if (T->lchild)
                 addq(ptrl, T->lchild);
             if (T->rchild)
@@ -138,7 +141,6 @@ void levelOrderTraverse(Queue* ptrl, BiTree* T) {
         } else
             break;
     }
-    printf("\n");
 }
 int LeafCount(BiTree* T) {
     if (T == NULL)
@@ -156,21 +158,25 @@ int Depth(BiTree* T) {
         int n = 0;
         m = Depth(T->lchild);
         n = Depth(T->rchild);
-        return m > n ? m + 1 : n + 1;
+        return (m>n) ? m + 1 : n + 1;
     }
 }
+
 int main() {
-    Queue* ptrl = createQuene();
-    ltStack* S = ltMakeEmpty();
-    BiTree* ptr = NULL;
-    CreateBiTree(ptr);
+    Queue* ptrl;
+    BiTree* ptr;   
+    ptrl=createQuene();
+    ptr=CreateBiTree(ptr);
     printf("%d\n", LeafCount(ptr));
     printf("%d\n", Depth(ptr));
     PreOrderTraverse(ptr);
+    printf("\n");
     InOrderTraverse(ptr);
+    printf("\n");
     InOrderTraverse_2(ptr);
+    printf("\n");
     PostOrderTraverse(ptr);
+    printf("\n");
     levelOrderTraverse(ptrl, ptr);
-
     return 0;
 }

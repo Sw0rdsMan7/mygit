@@ -1,3 +1,4 @@
+package prt1to8;
 
 /*import java.util.Scanner;//7.3
 public class project3 {

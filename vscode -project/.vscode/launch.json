@@ -6,6 +6,76 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch DistinctNumbers",
+            "request": "launch",
+            "mainClass": "javaprt10.DistinctNumbers",
+            "projectName": "vscode-java"
+        },
+        {
+            "type": "java",
+            "name": "Launch TestArrayList",
+            "request": "launch",
+            "mainClass": "javaprt10.TestArrayList",
+            "projectName": "vscode-java"
+        },
+        {
+            "type": "java",
+            "name": "Launch CastingDemo",
+            "request": "launch",
+            "mainClass": "javaprt10.CastingDemo",
+            "projectName": "vscode-java"
+        },
+        {
+            "type": "java",
+            "name": "Launch DynamicBindingDemo",
+            "request": "launch",
+            "mainClass": "javaprt10.DynamicBindingDemo",
+            "projectName": "vscode-java"
+        },
+        {
+            "type": "java",
+            "name": "Launch polymorphismDemo",
+            "request": "launch",
+            "mainClass": "javaprt10.polymorphismDemo",
+            "projectName": "vscode-java"
+        },
+        {
+            "type": "java",
+            "name": "Launch TestCircleRectangle",
+            "request": "launch",
+            "mainClass": "javaprt10.TestCircleRectangle",
+            "projectName": "vscode-java"
+        },
+        {
+            "type": "java",
+            "name": "Launch runfile",
+            "request": "launch",
+            "mainClass": "runfile.runfile",
+            "projectName": "vscode-java"
+        },
+        {
+            "type": "java",
+            "name": "Launch app2",
+            "request": "launch",
+            "mainClass": "prt8.app2",
+            "projectName": "vscode-java"
+        },
+        {
+            "type": "java",
+            "name": "Launch hello",
+            "request": "launch",
+            "mainClass": "prt8.hello",
+            "projectName": "vscode-java"
+        },
+        {
+            "type": "java",
+            "name": "Launch javaprt9",
+            "request": "launch",
+            "mainClass": "javprt9.javaprt9",
+            "projectName": "vscode-java"
+        },
+        {
+            "type": "java",
             "name": "Launch project2",
             "request": "launch",
             "mainClass": "project2",
