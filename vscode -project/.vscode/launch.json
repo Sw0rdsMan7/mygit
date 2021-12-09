@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch T16runfile",
+            "request": "launch",
+            "mainClass": "javaprt11.T16runfile",
+            "projectName": "vscode-java"
+        },
+        {
+            "type": "java",
+            "name": "Launch T8runfile",
+            "request": "launch",
+            "mainClass": "javaprt11.T8runfile",
+            "projectName": "vscode-java"
+        },
+        {
+            "type": "java",
             "name": "Launch DistinctNumbers",
             "request": "launch",
             "mainClass": "javaprt10.DistinctNumbers",

@@ -31,30 +31,28 @@ void ltPush(ltStack* ptrl, BiTree* item) {
     }
 }
 BiTree* ltPop(ltStack* ptrl) {
-    int flag=0;
-    if (ptrl->top == -1&&flag!=1) {
+    int flag = 0;
+    if (ptrl->top == -1 && flag != 1) {
         printf("Stack is empty");
         return NULL;
     } else {
-        flag=1;
+        flag = 1;
         return ptrl->data[(ptrl->top)--];
     }
 }
-BiTree * CreateBiTree(BiTree *T) {
-    BiTree * ptr;
+BiTree* CreateBiTree(BiTree* T) {
+    BiTree* ptr;
     char ch;
-    scanf("%c",&ch);
+    scanf("%c", &ch);
     getchar();
-    if (ch == '#')
-        {
-            ptr=NULL;
-            return ptr;
-        }
-    else {
+    if (ch == '#') {
+        ptr = NULL;
+        return ptr;
+    } else {
         ptr = (BiTree*)malloc(sizeof(BiTree));
         ptr->data = ch;
-        ptr->lchild=CreateBiTree(ptr->lchild);
-        ptr->rchild=CreateBiTree(ptr->rchild);
+        ptr->lchild = CreateBiTree(ptr->lchild);
+        ptr->rchild = CreateBiTree(ptr->rchild);
         return ptr;
     }
 }
@@ -158,15 +156,15 @@ int Depth(BiTree* T) {
         int n = 0;
         m = Depth(T->lchild);
         n = Depth(T->rchild);
-        return (m>n) ? m + 1 : n + 1;
+        return (m > n) ? m + 1 : n + 1;
     }
 }
 
 int main() {
     Queue* ptrl;
-    BiTree* ptr;   
-    ptrl=createQuene();
-    ptr=CreateBiTree(ptr);
+    BiTree* ptr;
+    ptrl = createQuene();
+    ptr = CreateBiTree(ptr);
     printf("%d\n", LeafCount(ptr));
     printf("%d\n", Depth(ptr));
     PreOrderTraverse(ptr);

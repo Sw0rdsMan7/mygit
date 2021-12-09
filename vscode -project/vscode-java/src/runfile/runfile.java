@@ -1,10 +1,10 @@
 package runfile;
 
+
 public class runfile {
     public static void main(String args[]) {
-        System.out.println("hello world!Sw0rdsMan");
-        System.out.println("hello world");
-        int xMan=5;
-        System.out.println(xMan);
+        int number1=4;
+        System.out.print("hello world!Sw0rdsMan，"+(number1+4));
+       
     }
 }

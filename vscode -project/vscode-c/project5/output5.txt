@@ -1,0 +1,2 @@
+BFS from V1: V1 V2 V4 V0 V3 
+DFS from V3: V3 V1 V2 V0 V4 
