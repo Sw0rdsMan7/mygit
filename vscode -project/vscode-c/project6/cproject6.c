@@ -138,7 +138,7 @@ int DeleteMax(Maxheap H) {
     int item_index = 1;
     int bigger;
     int bigger_index;
-    H->Elements[1] = H->Elements[H->Size+1];
+    H->Elements[1] = H->Elements[H->Size--];
     for (; item_index <= H->Size / 2;) {
         if (item_index * 2 +1<= H->Size) {
             bigger =
@@ -157,10 +157,11 @@ int DeleteMax(Maxheap H) {
 
         if (H->Elements[item_index] > bigger)
             break;
-        else
+        else{
             H->Elements[bigger_index] = H->Elements[item_index];
-        H->Elements[item_index] = bigger;
-        item_index = bigger_index;
+            H->Elements[item_index] = bigger;
+            item_index = bigger_index;
+        }
     }
     return item;
 }
