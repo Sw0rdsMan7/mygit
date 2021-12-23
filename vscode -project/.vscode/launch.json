@@ -6,6 +6,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch runfile2",
+            "request": "launch",
+            "mainClass": "javaprt12.runfile2",
+            "projectName": "vscode-java"
+        },
+        {
+            "type": "java",
+            "name": "Launch runfile12",
+            "request": "launch",
+            "mainClass": "javaprt12.runfile12",
+            "projectName": "vscode-java"
+        },
+        {
+            "type": "java",
+            "name": "Launch dasdas",
+            "request": "launch",
+            "mainClass": "runfile.dasdas",
+            "projectName": "vscode-java"
+        },
+        {
+            "type": "java",
+            "name": "Launch T19runfile",
+            "request": "launch",
+            "mainClass": "javaprt11.T19runfile",
+            "projectName": "vscode-java"
+        },
+        {
+            "type": "java",
+            "name": "Launch T17runfile",
+            "request": "launch",
+            "mainClass": "javaprt11.T17runfile",
+            "projectName": "vscode-java"
+        },
+        {
+            "type": "java",
             "name": "Launch T16runfile",
             "request": "launch",
             "mainClass": "javaprt11.T16runfile",
