@@ -1,4 +1,4 @@
-package sixth_task;
+package javaprt9;
 
 public class TestCircle_1 {
     public static void main (String[] args)

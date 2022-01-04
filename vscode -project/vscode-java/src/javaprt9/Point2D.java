@@ -1,4 +1,4 @@
-package sixth_task;
+package javaprt9;
 
 //PENDING_DOC_REVIEW of this whole class
 /**
