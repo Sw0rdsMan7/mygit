@@ -1,6 +1,6 @@
 package javaprt12;
 
-public class Student implements Comparable {
+public class Student implements Comparable<Object> {
     private String name;
     private String number;
     private int year;

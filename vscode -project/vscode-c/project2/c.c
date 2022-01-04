@@ -184,7 +184,7 @@ int main(int argc, char *argv[])
 	{
 		flag2=0;
 		flag1++;
-		scanf("%d", &n);
+		fscanf(in, "%d", &n);
 		flag2+=n;
 		if (n == -1)
 			break;
@@ -198,7 +198,7 @@ int main(int argc, char *argv[])
 				insert(x, i, lthead);
 			}
 		}
-		scanf("%d", &n);
+		fscanf(in, "%d", &n);
 		flag2+=n;
 		lkhead = lkMakeEmpty();
 		for (int i = 1; i <= n; i++)
