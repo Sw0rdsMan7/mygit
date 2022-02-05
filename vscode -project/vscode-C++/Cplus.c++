@@ -13,29 +13,7 @@
 
 #include <bits/stdc++.h>
 using namespace std;
-class Solution {
-public:
-    int lengthOfLongestSubstring(string s) {
-        int maxlength=0;
-        string a="";
-        string ::iterator p=s.begin();
-        for ( p;p!=s.end();p++){
-            for(string::iterator p2=p;p2!=s.end();p2++){
-                if(a.find(*p2)==-1){
-                    a.push_back(*p2);
-                }
-                else{
-                    if(a.size()>maxlength)
-                        maxlength=a.size();
-                    a="";
-                    break;
-                }
-            }
-        }
-        return maxlength;
-        
-    }
-};
+
 int main(int argc, char const* argv[]) {
              //vector(动态数组)实例
     // int n = 0;
@@ -171,11 +149,5 @@ int main(int argc, char const* argv[]) {
 
     
 
-    Solution a;
-    cout<<a.lengthOfLongestSubstring(" ");
 
-        
-    
-
-    
 }
