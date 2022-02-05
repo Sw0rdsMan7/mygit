@@ -60,10 +60,12 @@ public class user  implements Serializable{
                 if(answer.equals("是")){
                     file.delete();
                     System.out.println("删除成功!");
+                    input.close();
                     return true;
                 }
                 
                 else{
+                    input.close();
                     return true;
                     
                 }
@@ -72,9 +74,9 @@ public class user  implements Serializable{
             }
             else{
                 System.out.println("该用户名并不存在，请重新输入!");
+                input.close();
                 return false;
             }
-        
         
 
     }
@@ -114,6 +116,7 @@ public class user  implements Serializable{
                     System.out.println("该用户已经为管理员用户!");
                     ois.close();
                     oos.close();
+                    input.close();
                     return true;
                 }
                 
@@ -121,6 +124,7 @@ public class user  implements Serializable{
             }
             catch(Exception  ex){
                 System.out.println("该用户名并不存在，请重新输入!");
+                input.close();
                 return false;
 
             }
@@ -155,6 +159,7 @@ public class user  implements Serializable{
                     } 
                     else if(answer.equals("否")){
                         oos.close();
+                        input.close();
                         return true;  
                     }
                     else{

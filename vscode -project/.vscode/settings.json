@@ -3,6 +3,12 @@
         "vscode-java"
     ],
     "files.associations": {
-        "stdio.h": "c"
+        "*.java": "java",
+        "stdio.h": "c",
+        "*.tcc": "cpp",
+        "forward_list": "cpp",
+        "list": "cpp",
+        "regex": "cpp",
+        "iostream": "cpp"
     }
 }

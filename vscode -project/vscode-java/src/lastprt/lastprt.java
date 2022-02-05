@@ -23,7 +23,7 @@ public class lastprt {
             System.out.println("该用户名已被注册!请尝试登录或重新输入用户名");
             System.out.println("1.重新输入用户名");
             System.out.println("2.进行登录");
-
+            
             while (true) {
                 answer = input.next();
                 if (answer.equals("1")) {
@@ -36,7 +36,7 @@ public class lastprt {
                 } else {
                     System.out.println("输入格式有误! 请重新输入!");
                 }
-
+                
             }
 
         } catch (FileNotFoundException ex) {
@@ -48,6 +48,7 @@ public class lastprt {
             oos.close();
             System.out.println("注册成功!请尝试登录!");
         }
+        input.close();
 
     }
 
@@ -77,7 +78,6 @@ public class lastprt {
             System.out.println("未检测到指定用户名，请选择重新输入用户名或进行注册!（请输入'1' 或'2'）");
             System.out.println("1.重新输入用户名");
             System.out.println("2.进行注册");
-
             while (true) {
                 answer = input.next();
                 if (answer.equals("1")) {
@@ -93,6 +93,7 @@ public class lastprt {
 
             }
         }
+        input.close();
         return user1;
     }
 
@@ -130,14 +131,13 @@ public class lastprt {
         oos.writeObject(user1);
         oos.close();
         bufferedReader.close();
+        input.close();
     }
-
     public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException {
         System.out.print("欢迎使用《学党史，知党情，跟党走》系统! \n请问你是否已经注册过账户呢？\n请输入“是” 或 “否” :");
         String answer;
         user user1 = new user("1", "2");
         Scanner input = new Scanner(System.in);
-
         while (true) { // 登录模块（含注册）
             answer = input.nextLine();
             if (answer.equals("是")) {
@@ -251,6 +251,7 @@ public class lastprt {
                     System.exit(0);
                 } else {
                     System.out.println("输入格式有误!请重新输入");
+                    
                 }
             }
 
