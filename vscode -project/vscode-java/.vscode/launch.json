@@ -5,6 +5,20 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "Launch Demo3",
+            "request": "launch",
+            "mainClass": "demo3.Demo3",
+            "projectName": "jdbc_db"
+        },
+        {
+            "type": "java",
+            "name": "Launch lastprt",
+            "request": "launch",
+            "mainClass": "lastprt.lastprt",
+            "projectName": "vscode-java"
+        },
+        {
             "name": "(gdb) 启动",
             "type": "cppdbg",
             "request": "launch",

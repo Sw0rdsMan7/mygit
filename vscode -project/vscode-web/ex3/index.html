@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>期中测试</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="flex-col" > 
+    <div class="container flex-col">
+        <div id="logo" class="flex-row box-border main-width">
+            <img src="images/logo.png" alt="logo" id="logoImg">
+            <div class="entrance flex-row">
+                <img src="images/npcAlbumn.png" alt="npcAlbumn" class="entrance-img">
+                <img src="images/keyConcept.png" alt="keyConcept" class="entrance-img">
+                <img src="images/personCenter.png" alt="personCenter" class="entrance-img">
+            </div>
+        </div>
+        <div class="main flex-row main-width ">
+            <div class="panel-box flex-col">
+                <div class="panel box-border" id="gameState">
+                    <h2 class="panel-title flex-col"><span>查看统计</span></h2>
+                    <div class="panel-inside">
+                        <div class="item flex-row">
+                            <label for="">答题进度</label>
+                          
+                            <ul class="progress">
+                                <li class="progressbar progressbar-active"></li>
+                                <li class="progressbar"></li>
+                                <li class="progressbar"></li>
+                                <li class="progressbar"></li>
+                                <li class="progressbar"></li>
+                                <li class="progressbar"></li>
+                                <li class="progressbar"></li>
+                                <li class="progressbar"></li>
+                                <li class="progressbar"></li>
+                                <li class="progressbar"></li>
+                                <li class="progressbar"></li>
+                                <li class="progressbar"></li>
+                                <li class="progressbar"></li>
+                                <li class="progressbar"></li>
+                                <li class="progressbar"></li>
+                            </ul> 
+                             
+                        </div>
+                        <div class="item flex-row margin-top">
+                            <p id="correctNums">答对 <span class="num">1</span>次</p>
+                            <p id="score">总分<span class="num">10</span>分</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel box-border margin-top" id="npcState">
+                    <h2 class="panel-title flex-col"><span>npc统计</span></h2>
+                    <div class="panel-inside">
+                        <div class="item flex-row">
+                            <label for="">失血症状</label>
+                            <ul class="npc-state-group">
+                                <li class="npc-state"></li>
+                                <li class="npc-state"></li>
+                                <li class="npc-state"></li>
+                                <li class="npc-state"></li>
+                                <li class="npc-state"></li>  
+                            </ul> 
+                        </div>
+                        <div class="item flex-row npc-group-align margin-top">
+                            <div class="npc-group flex-row">
+                                <label for="">出血</label>
+                                <ul>
+                                    <li class="npc-state"></li>
+                                    <li class="npc-state"></li>
+                                </ul> 
+                            </div>
+                            <div class="npc-group flex-row">
+                                <label for="">发热</label>
+                                <ul >
+                                    <li class="npc-state"></li>
+                                </ul> 
+                            </div>
+                        </div>
+                        <div class="item flex-row npc-group-align margin-top">
+                            <div class="npc-group flex-row">
+                                <label for="">出血</label>
+                                <ul>
+                                    <li class="npc-state"></li>
+                                    <li class="npc-state"></li>
+                                </ul> 
+                            </div>
+                            <div class="npc-group flex-row">
+                                <label for="">发热</label>
+                                <ul >
+                                    <li class="npc-state"></li>
+                                </ul> 
+                            </div>
+                        </div>
+                        <div class="item flex-row npc-group-align margin-top">
+                            <div class="npc-group flex-row">
+                                <label for="">感染</label>
+                                <ul>
+                                    <li class="npc-state"></li>
+                                    <li class="npc-state"></li>
+                                </ul> 
+                            </div>
+                            <div class="npc-group flex-row">
+                                <label for="">休克</label>
+                                <ul >
+                                    <li class="npc-state"></li>
+                                </ul> 
+                            </div>
+                        </div>
+                        <div class="item flex-row npc-group-align margin-top">
+                            <div class="npc-group flex-row">
+                                <label for="">裂伤</label>
+                                <ul>
+                                    <li class="npc-state"></li>
+                                </ul> 
+                            </div>
+                            <div class="npc-group flex-row">
+                                <label for="">凝血</label>
+                                <ul >
+                                    <li class="npc-state"></li>
+                                </ul> 
+                            </div>
+                        </div>
+                        <div class="item flex-row npc-group-align margin-top">
+                            <div class="npc-group flex-row">
+                                <label for="">宫缩</label>
+                                <ul>
+                                    <li class="npc-state"></li>
+                                </ul> 
+                            </div>
+                            <div class="npc-group flex-row">
+                                <label for="">胎盘</label>
+                                <ul >
+                                    <li class="npc-state"></li>
+                                </ul> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="matrix" class="panel flex-col">
+                <ul class="card-group flex-row" >
+                    <li class="card"></li>
+                    <li class="card"></li>
+                    <li class="card"></li>
+                    <li class="card"></li>
+                    <li class="card"></li>
+                    <li class="card"></li>
+                    <li class="card"></li>
+                    <li class="card"></li>
+                    <li class="card"></li>
+                    <li class="card"></li>
+                    <li class="card"></li>
+                    <li class="card"></li>
+                    <li class="card"></li>
+                    <li class="card"></li>
+                    <li class="card"></li>
+                    <li class="card"></li>
+                    <li class="card"></li>
+                    <li class="card"></li>
+                    <li class="card"></li>
+                    <li class="card"></li>
+                    <li class="card"></li>
+                    <li class="card"></li>
+                    <li class="card"></li>
+                    <li class="card"></li>
+                    <li class="card"></li>
+                    <li class="card"></li>
+                    <li class="card"></li>
+                    <li class="card"></li>
+                    <li class="card"></li>
+                    <li class="card"></li>
+                </ul>
+            </div>
+        </div>
+       <div id="hr" class="main-width margin-top"></div>
+       <div id="footer main-width">
+           <p class="margin-top">copyright&copy;HZNU.edu.cn 2022</p>
+       </div>
+    </div>
+    <!-- 做题框 -->
+
+    <div class="do-question">
+        <div class="top">
+            <div class="top-empty"></div>
+            
+            <div id="close"></div>
+        </div>
+        <div class="content question-content">
+            <h1 id="content">1. 题目内容题目内容题目内容题目内容题目内容题目内容xxxx题目内容题目内容题目内容题目内容
+                题目内容题目内容题目内容题目内容题目内容题目内容题目内容题目内容题目内容题目内容题目内容题
+                题目内容题目内容题目内容题目内容题目内容题目内容题目内容题目内容题目内容题目内容目内容
+                题目内容题目内容题目内容题目内容题目内容题目内容题目内容题目内容题目内容题目内容题目内容题目内容</h1>
+            <div class="option">
+                    <ul>
+                        <li class="option-item">
+                            <input id="optionA" type="radio" name="options" value="a" class="option-check" >
+                            <label for="optionA" class="option-label"><span class="option-title">A</span><span class="option-content">x你好你好你好你好你好你好你好你好你好你好你好你好好你好你好你好你好你好</span> </label>
+                        </li>
+                        <li class="option-item">
+                            <input id="optionB" type="radio" name="options" value="b" class="option-check">
+                            <label for="optionB" class="option-label"><span class="option-title">B</span><span class="option-content">x你好你好你好你好你好你好你好你好你好你好你好你好好你好你好你好你好你好</span></label>
+                        </li>
+                        <li class="option-item">
+                            <input id="optionC" type="radio" name="options" value="c" class="option-check">
+                            <label for="optionC" class="option-label"><span class="option-title">C</span><span class="option-content"> x你好你好你好你好你好你好你好你好你好你好你好你好好你好你好你好你好你好</span></label>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li class="option-item">
+                            <input id="optionD" type="radio" name="options" value="d" class="option-check" >
+                            <label for="optionD" class="option-label"><span class="option-title">D</span><span class="option-content">x你好你好你好你好你好你好你好你好你好你好你好你好好你好你好你好你好你好</span></label>
+                        </li>
+                        <li class="option-item">
+                            <input id="optionE" type="radio" name="options" value="e" class="option-check">
+                            <label for="optionE" class="option-label"><span class="option-title">E</span><span class="option-content">x你好你好你好你好你好你好你好你好你好你好你好你好好你好你好你好你好你好</span></label>
+                        </li>
+                        <li class="option-item">
+                            <input id="optionF" type="radio" name="options" value="f" class="option-check">
+                            <label for="optionF" class="option-label"><span class="option-title">F</span><span class="option-content"> x你好你好你好你好你好你好你好你好你好你好你好你好好你好你好你好你好你好</span></label>
+                        </li>
+                    </ul>
+            </div>
+        
+            <div class="buttons">
+                <img src="images/paleNpc.png" alt="paleNpc"/>
+                <div class="view-anlysis">
+                    <img src="images/btnViewAnalysis.png" alt="viewAnalysis" id="btnAnalysis"/>
+                    <ul class="ans">
+                        <li><span class="title">参考答案:</span><span class="value">xxxxxxxxxxx</span></li>
+                        <li><span class="value">xxxxxxxxxxx</span></li>
+                        <ul class="inner-ans">
+                            <li><span class="title">知识点:</span><span class="value pink">产后出血</span></li>
+                            <li><span class="title">难度:</span><span class="value">易</span></li>
+                        </ul>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/test2.js"></script>
+</body>
+</html>

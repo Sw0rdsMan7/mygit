@@ -1,0 +1,316 @@
+/* 
+    author:zjvivi
+    version:1.0
+    date:2022-3-13
+    【说明】
+    1、页面背景色为：rgba(255, 253, 248, 0.39)
+    2、logo高度为84px，其他元素高度可以根据效果图自定，有图片的需要参考图片大小
+    3、页面圆角矩形边框： #ECB390，2px
+    4、左边两栏的标题背景色为： rgba(236, 179, 144, 1)，宽度102px，高度25px;
+    5、左边第1栏的灰色矩形进度条：rgba(237, 237, 237, 0.39)，绿色矩形进度条：#65C18C
+    6、页脚上方的分割线颜色：#FFC0D3，粗细为3px
+    7、页面布局时注意对齐
+*/
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-size:12px;
+   
+}
+
+body{
+    width:100vw;
+    height: 100vh;
+    background: rgba(255, 253, 248, 0.39);
+}
+ul li{
+    list-style:none;
+}
+.flex-col{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-row{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.container{
+    width: 90vw;
+    height:100vh;
+    
+}
+.main-width{
+    width:85vw;
+}
+.margin-top{
+    margin:20px 0 0 0;
+}
+.entrance-img{
+    margin:0  0 0 13px;
+}
+.box-border{
+    border: 2px solid #ECB390;
+    border-radius: 6px;
+}
+
+.panel{
+    width:30vw;
+    overflow:hidden;
+    
+}
+.panel-title{
+    width: 102px;
+    height: 25px;
+    background: rgba(236, 179, 144, 1);
+    border-radius: 7px;
+    font-size:1em;
+    font-weight:normal;
+    text-align: center;
+    position:relative;
+    top:-13px;
+    left:20px;
+    color:#fff;
+    justify-content: center;
+
+}
+
+.panel-inside{
+    padding:0 0 0 13px;
+}
+
+.progress,.npc-state-group{
+   position: relative;
+   left:-30px;
+}
+.progressbar{
+    display:inline-block;
+    width:7px;
+    height:25px;
+    border-radius: 5px;
+    background: rgba(237, 237, 237, 0.39);
+    margin:0 1px 0 0;
+}
+.progressbar-active{
+   background: #65C18C;
+}
+.num{
+    font-size:1.5em;
+    font-weight: bold;
+}
+.npc-state{
+    width:30px;
+    height:30px;
+    background: url(../images/npc-empty.png) center center no-repeat;
+    display: inline-block;
+}
+.npc-group-align{
+    justify-content: flex-start;
+}
+.npc-group{
+    margin:0 30px 0 0;
+}
+.npc-group label{
+   padding:0 13px 0 0;
+}
+.card-group{
+    position: relative;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+}
+.card{
+    width:90px;
+    height:90px;
+    background: url(../images/unknown.png) center center no-repeat;
+}
+
+#logo{
+    height:84px;
+    margin:auto;
+    padding:0 13px 0 13px;
+}
+#logoImg{
+    
+    display: block;
+}
+#score{
+    background: url(../images/score.png) left center no-repeat;
+    padding:0 0 0 25px;
+    margin:0 13px 0 0;
+}
+#correctNums{
+    background: url(../images/correct.png) left center no-repeat;
+    padding:0 0 0 25px;
+    /* margin:0 0 0 13px; */
+}
+#gameState{
+    height:15vh;
+}
+#npcState{
+    height:47vh;
+}
+#matrix{
+    min-width:50vw;
+    height:75vh;
+    background: url(../images/Parturient.png) center center no-repeat;
+    justify-content: center;
+}
+
+#hr{
+    border: 3px solid #FFC0D3;
+}
+#footer{
+    font-size:1.2em;
+}
+
+/* 做题框 */
+
+.do-question{
+    background: url(../images/questionBg.png)  no-repeat;
+    width:930px;
+    height:524px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top:-600px;
+    z-index: 1;
+    display: none;
+   
+}
+
+.top{
+    width:930px;
+    height:90px;
+    display: flex;
+    justify-content: space-between;
+}
+.top-empty{
+    width:885px;
+}
+
+.content{
+    height:434px;
+}
+.question-content{
+    width:750px;
+    padding-left:230px;
+}
+h1{
+    height:120px;
+    font-size:12px;
+    display: flex;
+    align-items: center;
+}
+.option-label{
+    font-size:12px;
+}
+.option{
+    height:200px;
+    display: flex;
+    justify-content:space-between;
+    align-items: flex-start;
+}
+.option ul{
+    width:300px;
+}
+.option-check{
+    cursor: pointer;
+}
+.option-item label{
+    cursor: pointer;
+}
+.option-item{
+
+   background: #eee;
+   border-radius: 9px;
+   padding:9px;
+   /* height:49px; */
+   margin:0 9px 9px 0;
+}
+.option-li-active{
+    background:#ffebcc;
+}
+.option-title{
+    font-weight: bold;
+}
+.buttons{
+    height:114px;
+    display:flex;
+    justify-content: flex-start;
+    align-items:flex-start;
+}
+.view-anlysis{
+    display: flex;
+    border:2px solid  #FFC0D3;
+    border-radius: 8px;
+    margin-left:5px;
+    height:78px;
+}
+.pink{
+    color:#F4A2A9;
+    font-weight: bold;
+}
+.ans{
+    width:400px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height:75px;
+    margin-left:10px;
+}
+.title{
+    /* font-weight:bold; */
+   
+    width:60px;
+    display: inline-block;
+}
+.value{
+    width:100px;
+    display: inline-block;
+}
+.orange-star{
+    background: url(../images/orangeStar.png) no-repeat;
+    display: inline-block;
+    width:11px;
+    height:10px;
+    margin:0 3px 0 3px;
+}
+.grey-star{
+    background: url(../images/greyStar.png) no-repeat;
+    display: inline-block;
+    width:11px;
+    height:10px;
+    margin:0 3px 0 3px;
+}
+.ans li span{
+    font-size:12px;
+}
+
+.inner-ans{
+    display: flex;
+   
+}
+#close{
+    width:45px;
+    height:45px;
+    border-radius: 50%;
+    cursor:pointer;
+}
+
+.paleNpc-card{
+    width:90px;
+    height:90px;
+    background: url(../images/paleNpc.png) center center no-repeat;
+}
+.kidneyNpc-card{
+    width:90px;
+    height:90px;
+    background: url(../images/kidneyNpc.png) center center no-repeat;
+}

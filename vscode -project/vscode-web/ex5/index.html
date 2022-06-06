@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- 
+        近2周实践要求：
+
+        ex4.js完成任务：
+        1、添加video标记，并设置视频播放路径为video/demo4.mp4
+        2、video下方添加【播放】按钮，单击【播放】可播放视频，并且【播放】按钮文本变为【暂停】按钮，单击【暂停】可暂停播放
+        3、按照demo5.mp4视频中的做题框设计做题框的html结构和css，并且设置做题框默认为隐藏（display:none或者visibility:hidden)
+        
+        ex5.js完成任务：
+        1、网页加载后开始播放视频，播放到INTERVAL间隔后出现做题框，题目发ajax请求，请求文件为data下的questions.json文件，
+        json里面有单选和复选，题目是随机抽取1题动态显示到做题框中；
+        2、做题框中单击选项后单击【确认提交】按钮，回答正确，显示绿色的“回答正确”；回答错误，则显示红色的“回答错误”；单击圆形的【X】按钮关闭
+        做题框；
+        3、如果回答正确，视频继续播放，如果回答错误，视频重新开始播放。
+     -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>视频学习</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        
+        <video src="video/demo4.mp4" id ="video"></video>
+    </div>
+    <!-- 此处设计题目框 -->
+    <div class="do-question">
+        <div class="top">
+            <div id="close">X</div>
+        </div>
+        <div class="content">content</div>
+        <div class="option"></div>
+        <button id="btnSubmit">确认提交</button>
+        <div id="result">回答情况</div>
+        <div class="ans">
+            <div id="refAns">参考答案</div>
+            <div id="analysis">解析</div>
+        </div>
+        
+    </div>
+   
+    <!-- 引入jQuery库 -->
+    <script src="js/jquery.min.js"></script>
+    <!-- 引入动画函数的polyFill版 -->
+    
+    <!-- 引入本次实验js（ex4.js、ex5.js） -->
+   <script src="js/ex4.js"></script>
+   <script src="js/data.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,158 @@
+/* 
+	module:test1
+	author:zjvivi
+	date:2021-3-16
+	version:1.0
+*/
+*{
+	padding:0;
+	margin:0;
+	box-sizing:border-box;	
+}
+
+
+/* tag */
+body{
+	font-size:12px;
+	color:#666;
+	
+}
+img{
+	width:80%;
+}
+/* class */
+.container{
+	width:98vw;
+	margin:auto;
+
+}
+.leaf-size{
+	width:17px;
+	height:17px;
+	position: relative;
+	top:5px;
+}
+.bar-width{
+	width:80vw;
+}
+.flex-row{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+.flex-col{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.hr{
+	border-top:1px #eee solid;
+	width:98vw;
+	height:1px;
+}
+.intro-text{
+	width:32%;
+}
+.intro-text h2{
+	color:#000;
+}
+.intro-text button{
+	background: #fff;
+	font-size:11px;
+	display: block;
+	width:80px;
+	height:25px;
+	border:1px solid #888;
+	border-radius: 2px;
+	font-weight: normal;
+	color:#333;
+	
+}
+.intro-img{
+	border:1px solid #eee;
+	/* padding: 0 13px 0 13px; */
+	
+	padding:5px 0 5px 0;
+}
+.margin-top{
+	margin-top:13px;
+}
+.mainbar{
+	height:30vh;
+	background: radial-gradient(white, lightgreen);
+	width:98vw;
+	padding:0 10vw 0 10vw;
+	align-items: flex-start;
+	
+	
+}
+.mainbar h1{
+	font-size:46px;
+	color:#000;
+}
+.mainbar p{
+	/* color:#888; */
+	font-size:14.5px;
+	font-weight: 300;
+}
+
+.mainbar a{
+	text-decoration: none;
+	color:#fff;
+	font-weight: bold;
+}
+.sidebar-size{
+	height:35vh;
+	width:98vw;
+	padding:0 10vw 0 10vw;
+}
+.imgbar-size{
+	height:25vh;
+	width:98vw;
+	padding:0 10vw 0 10vw;
+}
+/* id */
+#logo{
+	background: #000;
+	color:#888;
+	padding:0 13px 0 13px;
+	height:5vh;
+}
+
+#logo h1{
+	font-size:12.5px;
+	font-weight: normal;
+}
+#btnSearch{
+	background: rgb(5,194,92);
+	color:#fff;
+	font-size:12px;
+	width:40px;
+	height:25px;
+	border-radius: 3px;
+}
+#txtSearch{
+	color:#eee;
+	display: inline-block;
+	height:23px;
+	font-size:8px;
+	font-weight: 100;
+	padding:0 0 0 8px ;
+	border-radius: 3px;
+
+}
+#learnmore{
+	width:100px;
+	height:30px;
+	background:rgb(28,119,186);
+	border:1px solid rgb(28,119,186);
+	border-radius: 3px;
+	box-shadow: 1px 1px 5px #eee;
+}
+#footer{
+	height:5vh;
+	width:100vw;
+	justify-content: center;
+}

@@ -1,0 +1,99 @@
+/* 
+	module:test1
+	author：周二班-殷俊
+	date：2022-3-15
+	version：1.0
+	【说明】
+	1、绿色：lightgreen
+	2、中间大块的背景为白到亮绿的渐变，可以用CSS3的radial-gradient实现
+	3、【了解更多...】的背景为蓝色，阴影为灰色
+	4、文字素材见根目录下【文字素材.txt】文件
+*/
+
+*{
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+body{
+	display: flex;
+	flex-direction: column	;
+}
+.container main{
+	height: 90%;
+	display: flex;
+	flex-direction: column;
+}
+.container header{
+	display: flex;
+	justify-content:space-between;
+	height: 8%;
+	align-items: center;
+	background-color: black;
+	border-radius: 6px;
+}
+.container header h1{
+	color: azure;
+}
+.container{
+	height: 100%;
+	width: 100%;
+}
+main #picture{
+	height: 30%;
+	border-radius: 1px ;
+}
+.container main #topbar
+{
+	display: flex;
+	flex-direction: column;
+	height: 30%;
+	background-color: lightgreen;
+	border-radius: 6px;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	justify-self:center;
+	
+}
+.container main #topbar h1{
+	position: relative;
+	height: 10%;
+	left: 20px;
+}
+.container main #topbar ul{
+	height: 70%;
+	align-self: auto;
+	left:20px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-size: large;
+	text-align:start;	
+	position:relative;
+}
+.container main #topbar #button_more{
+	left: 20px;	
+	position: relative;
+}
+.container main #mainbar {
+	height: 50%;
+	width: 70%;
+	display: flex;
+	display: -webkit-flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+
+}
+.container main #picture{
+	display: flex;
+	flex-direction: row;
+	align-items:center;
+	justify-content: space-evenly;
+	border-top: 2px solid grey;
+	border-bottom: 2px solid grey;
+}
+.container footer {
+	height: 5%;
+	text-align: center;
+	justify-content: flex-end;
+}

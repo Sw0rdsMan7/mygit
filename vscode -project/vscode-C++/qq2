@@ -1,0 +1,85 @@
+Accessing Page[0]=1
+Inside[0]:1
+Inside[1]:0
+Inside[2]:0
+Accessing Page[1]=2
+Inside[0]:1
+Inside[1]:2
+Inside[2]:0
+Accessing Page[2]=3
+Inside[0]:1
+Inside[1]:2
+Inside[2]:3
+Accessing Page[3]=4
+Inside[0]:4
+Inside[1]:2
+Inside[2]:3
+Accessing Page[4]=2
+It is already in memory!
+Inside[0]:4
+Inside[1]:2
+Inside[2]:3
+Accessing Page[5]=1
+Inside[0]:4
+Inside[1]:1
+Inside[2]:3
+Accessing Page[6]=5
+Inside[0]:4
+Inside[1]:1
+Inside[2]:5
+Accessing Page[7]=6
+Inside[0]:6
+Inside[1]:1
+Inside[2]:5
+Accessing Page[8]=2
+Inside[0]:6
+Inside[1]:2
+Inside[2]:5
+Accessing Page[9]=1
+Inside[0]:6
+Inside[1]:2
+Inside[2]:1
+Accessing Page[10]=2
+It is already in memory!
+Inside[0]:6
+Inside[1]:2
+Inside[2]:1
+Accessing Page[11]=3
+Inside[0]:3
+Inside[1]:2
+Inside[2]:1
+Accessing Page[12]=7
+Inside[0]:3
+Inside[1]:7
+Inside[2]:1
+Accessing Page[13]=6
+Inside[0]:3
+Inside[1]:7
+Inside[2]:6
+Accessing Page[14]=3
+It is already in memory!
+Inside[0]:3
+Inside[1]:7
+Inside[2]:6
+Accessing Page[15]=2
+Inside[0]:2
+Inside[1]:7
+Inside[2]:6
+Accessing Page[16]=1
+Inside[0]:2
+Inside[1]:1
+Inside[2]:6
+Accessing Page[17]=2
+It is already in memory!
+Inside[0]:2
+Inside[1]:1
+Inside[2]:6
+Accessing Page[18]=3
+Inside[0]:2
+Inside[1]:1
+Inside[2]:3
+Accessing Page[19]=6
+Inside[0]:6
+Inside[1]:1
+Inside[2]:3
+Accessing 20 pages, page faults 16 times, page-fault rate is 0.8
